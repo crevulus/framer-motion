@@ -1,15 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { buttonVariants } from "../utils/animationVariants";
 
 export default function Button(props) {
   return (
-    <motion.button
-      whileHover={{
-        scale: 1.2,
-        textShadow: "0px 0px 8px white",
-        boxShadow: "0px 0px 8px white",
-      }}
-    >
+    <motion.button variants={buttonVariants} whileHover="hover">
       {props.children}
     </motion.button>
   );

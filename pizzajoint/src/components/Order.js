@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React from "react";
+import { exitVariants } from "../utils/animationVariants";
 import {
   childVariants,
   containerVariants,
@@ -12,6 +13,7 @@ const Order = ({ pizza }) => {
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit={exitVariants.slide}
     >
       <h2>Thank you for your order :)</h2>
       {/* no need to list inital and animate because they propagate down to the child */}

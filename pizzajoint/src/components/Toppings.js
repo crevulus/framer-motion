@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import ListItem from "./ListItem";
 import { containerVariants } from "../utils/animationVariants.ts";
+import { exitVariants } from "../utils/animationVariants";
+import { motion } from "framer-motion";
 
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = [
@@ -15,11 +17,12 @@ const Toppings = ({ addTopping, pizza }) => {
   ];
 
   return (
-    <div
+    <motion.div
       className="toppings container"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
+      exit={exitVariants.slide}
     >
       <h3>Step 2: Choose Toppings</h3>
       <ul>
@@ -36,7 +39,7 @@ const Toppings = ({ addTopping, pizza }) => {
       <Link to="/order">
         <Button>Order</Button>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

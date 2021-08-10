@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "./Button";
+import { exitVariants } from "../utils/animationVariants";
 
 const Home = () => {
   return (
@@ -10,7 +11,8 @@ const Home = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       // control transition options; can only use duration with tween type animations
-      transition={{ delay: 1, duration: 3 }}
+      transition={{ delay: 1 }}
+      exit={exitVariants.slide}
     >
       <motion.h2 animate={{ fontSize: 50, color: "mediumseagreen" }}>
         Welcome to Pizza Joint

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Button from "./Button";
 import ListItem from "./ListItem";
 import { containerVariants } from "../utils/animationVariants.ts";
+import { exitVariants } from "../utils/animationVariants";
 
 const Base = ({ addBase, pizza }) => {
   const bases = ["Classic", "Thin & Crispy", "Thick Crust"];
@@ -12,9 +13,10 @@ const Base = ({ addBase, pizza }) => {
     <motion.div
       className="base container"
       variants={containerVariants}
+      // use names from variants object
       initial="hidden"
       animate="visible"
-      // use names from variants object
+      exit={exitVariants.slide}
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>

@@ -12,6 +12,7 @@ export const containerVariants = {
       mass: 0.4,
       damping: 8,
       when: "beforeChildren",
+      staggerChildren: 0.5,
     }, // higher mass moves slower; higher damping means more viscosity (stops quicker); when: beforeChildren = complete above animations before any children animations occur
   },
 };
@@ -25,5 +26,25 @@ export const childVariants = {
   },
   transition: {
     staggerChildren: 0.5, // this didn't work.
+  },
+};
+
+export const buttonVariants = {
+  hover: {
+    // scale: [1.2, 1, 1.2, 1, 1.2, 1, 1.2], // array values are keyframes
+    scale: 1.1,
+    textShadow: "0px 0px 8px white",
+    boxShadow: "0px 0px 8px white",
+    transition: {
+      duration: 0.6,
+      yoyo: Infinity,
+    },
+  },
+};
+
+export const exitVariants = {
+  slide: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
   },
 };

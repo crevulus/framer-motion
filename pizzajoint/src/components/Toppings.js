@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import ListItem from "./ListItem";
+import { containerVariants } from "../utils/animationVariants.ts";
 
 const Toppings = ({ addTopping, pizza }) => {
   let toppings = [
@@ -14,7 +15,12 @@ const Toppings = ({ addTopping, pizza }) => {
   ];
 
   return (
-    <div className="toppings container">
+    <div
+      className="toppings container"
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+    >
       <h3>Step 2: Choose Toppings</h3>
       <ul>
         {toppings.map((topping) => {

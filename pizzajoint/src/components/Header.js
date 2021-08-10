@@ -24,6 +24,7 @@ const Header = () => {
         animate={{ y: -10 }}
         // can only use stifness with spring type animations and need to explicitly define spring type
         transition={{ delay: 0.2, type: "spring", stiffness: 70 }}
+        drag
       >
         <h1>Pizza Joint</h1>
       </motion.div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import ListItem from "./ListItem";
+import { containerVariants } from "../utils/animationVariants.ts";
 
 const Base = ({ addBase, pizza }) => {
   const bases = ["Classic", "Thin & Crispy", "Thick Crust"];
@@ -10,9 +11,10 @@ const Base = ({ addBase, pizza }) => {
   return (
     <motion.div
       className="base container"
-      initial={{ x: "100vw" }}
-      animate={{ x: 0 }}
-      transition={{ type: "spring", delay: 0.5 }}
+      variants={containerVariants}
+      initial="hidden"
+      animate="visible"
+      // use names from variants object
     >
       <h3>Step 1: Choose Your Base</h3>
       <ul>
@@ -29,6 +31,7 @@ const Base = ({ addBase, pizza }) => {
       {pizza.base && (
         <motion.div
           className="next"
+          // simple method
           initial={{ x: "-100vw" }}
           animate={{ x: 0 }}
           transition={{ type: "spring", stiffness: 70 }}

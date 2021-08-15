@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Button from "./Button";
 import { exitVariants } from "../utils/animationVariants";
+import Loader from "./Loader";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
         {/* some props are directly from css; some are framer originals (like scale, x y,) */}
         <Button>Create Your Pizza</Button>
       </Link>
+      <Loader />
     </motion.div>
   );
 };
